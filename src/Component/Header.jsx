@@ -1,6 +1,8 @@
 import React from 'react'
 
 const Header = () => {
+
+
   return (
     <div>
       <nav className="flex flex-col lg:flex-row justify-between py-3 mx-6 mb-10">
@@ -11,6 +13,10 @@ const Header = () => {
         <h1 className="text-2xl font-bold ">Flavoro Foods</h1>
       </div>
       <div>
+        
+      
+        
+      
         <input
           type="search"
           name="search"

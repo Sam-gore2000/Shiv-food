@@ -5,10 +5,12 @@ import { useSelector } from 'react-redux';
 
 
 
+
 const Cart = () => {
   const[activeCart,setActiveCart] =useState();
   const CartItem=useSelector((store)=>store.cart.items);
-
+const totQty=CartItem.reduce((totQty,item)=>totQty+item.qty,0);
+const totalPrice=CartItem.reduce((total,item)=>total+item.qty *item.price,0);
 
   return (
     <>
@@ -29,8 +31,8 @@ const Cart = () => {
      
 
         <div className='font-bold text-sm p-3 absolute bottom-0 w-full'>
-          <h2>Item :</h2>
-          <h3>Total Amount:</h3>
+          <h2>Item :{totQty}</h2>
+          <h3>Total Amount:{totalPrice}</h3>
           <hr className='text-black'/>
           <button className='lg:w-[18vw] w-[90vw] mb-5 rounded-lg text-center text-white text-md bg-green-500 p-2  mr-3 my-2'>CheckOut</button>
         </div>
